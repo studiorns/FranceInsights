@@ -8,6 +8,21 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
+        /* SONER Logo Animation */
+        @keyframes sonerScan { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+        @keyframes sonerBlip { 0%, 20%, 100% { opacity: 0; } 2%, 15% { opacity: 1; } 3% { transform: scale(1.2); } }
+        
+        /* SONER Logo styles */
+        .soner-logo { display: flex; align-items: center; color: white; font-family: 'Inter', sans-serif; font-size: 28px; font-weight: 300; }
+        .soner-radar { width: 24px; height: 24px; border-radius: 50%; border: 1px solid white; margin: 0 3px; position: relative; background-color: rgba(255, 255, 255, 0.05); overflow: hidden; }
+        .soner-scanner { position: absolute; top: 0; left: 0; width: 100%; height: 100%; animation: sonerScan 4s linear infinite; transform-origin: center; }
+        .soner-scanner::before { content: ''; position: absolute; top: 0; left: 50%; width: 50%; height: 50%; background: linear-gradient(90deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.4)); transform-origin: bottom left; clip-path: polygon(0 0, 100% 0, 0 100%); }
+        .soner-scanner::after { content: ''; position: absolute; top: 0; left: 50%; width: 50%; height: 1px; background: linear-gradient(90deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 1)); transform-origin: left center; box-shadow: 0 0 4px rgba(255, 255, 255, 0.8); }
+        .soner-blip { position: absolute; width: 2px; height: 2px; background-color: white; border-radius: 50%; opacity: 0; box-shadow: 0 0 4px white; }
+        .soner-blip:nth-child(1) { top: 25%; left: 30%; animation: sonerBlip 4s 1s infinite; }
+        .soner-blip:nth-child(2) { top: 65%; left: 60%; animation: sonerBlip 4s 2.5s infinite; }
+        .soner-tagline { color: white; font-size: 8px; text-transform: uppercase; font-weight: 500; letter-spacing: 0.5em; margin-left: 10px; opacity: 0.8; }
+
         :root {
             --primary: #4285f4;
             --primary-light: #1a2233;
@@ -305,6 +320,16 @@
 <body>
     <header>
         <div class="container">
+            <div style="display: flex; justify-content: center; align-items: center; margin-bottom: 15px;">
+                <div class="soner-logo">
+                    S<div class="soner-radar">
+                        <div class="soner-scanner"></div>
+                        <div class="soner-blip"></div>
+                        <div class="soner-blip"></div>
+                    </div>NER
+                    <span class="soner-tagline">Visual Intelligence</span>
+                </div>
+            </div>
             <h1>France Market Metrics & Insights</h1>
             <p class="subtitle">Market Analysis and Performance Indicators</p>
         </div>
@@ -476,7 +501,7 @@
         <div class="metric-card">
             <div class="metric-header">
                 <h3 class="metric-title">Average Length of Stay</h3>
-                <div class="metric-value">11 days</div>
+                <div class="metric-value">3.2 days</div>
             </div>
             <p class="metric-description">The average number of nights French travelers spend in Abu Dhabi per visit.</p>
             
@@ -488,12 +513,12 @@
             <div class="business-implications">
                 <h5>Business Implications:</h5>
                 <ul>
-                    <li>The 11-day average stay indicates a longer-than-average vacation timeframe, significantly longer than many European markets.</li>
-                    <li>This suggests marketing should focus on comprehensive itineraries and experiences that span a week and a half or more.</li>
-                    <li>Package offerings should be designed around this extended timeframe to maximize appeal.</li>
-                    <li>There's an opportunity to develop multi-destination packages that include Abu Dhabi as a significant portion of a longer UAE trip.</li>
-                    <li>Hotel partners should be encouraged to develop packages with progressive discounts for stays of 10 days or more.</li>
-                    <li>The relatively long stay suggests a need for diverse experiences that maintain engagement over an extended period.</li>
+                    <li>The 3.2-day average stay indicates a short-to-medium length vacation timeframe, typical of many European markets.</li>
+                    <li>This suggests marketing should focus on compact itineraries and experiences that can be enjoyed within a 3-4 day timeframe.</li>
+                    <li>Package offerings should be designed around this timeframe to maximize appeal.</li>
+                    <li>There's an opportunity to develop weekend-plus packages that include Abu Dhabi as a short break destination.</li>
+                    <li>Hotel partners should be encouraged to develop 3-4 day packages with all-inclusive options to appeal to this market.</li>
+                    <li>The relatively short stay suggests a need for high-impact experiences that deliver maximum value in a limited time.</li>
                 </ul>
             </div>
         </div>
@@ -596,7 +621,7 @@
         <div class="metric-card">
             <div class="metric-header">
                 <h3 class="metric-title">Media Elasticity</h3>
-                <div class="metric-value">0.32 (moderate impact)</div>
+                <div class="metric-value">0.35 (moderate impact)</div>
             </div>
             <p class="metric-description">A marketing metric that measures how responsive travel queries are to changes in media impressions for the France market.</p>
             
@@ -619,7 +644,7 @@
             <div class="business-implications">
                 <h5>Business Implications:</h5>
                 <ul>
-                    <li>The 0.32 elasticity means that for every 10% increase in media impressions, travel queries increase by approximately 3.2%.</li>
+                    <li>The 0.35 elasticity means that for every 10% increase in media impressions, travel queries increase by approximately 3.5%.</li>
                     <li>This indicates that media investments drive travel queries with moderate efficiency.</li>
                     <li>The relationship is positive but not particularly strong (just above 0.3).</li>
                     <li>Media campaigns will generate positive ROI but with moderate efficiency.</li>
@@ -631,7 +656,7 @@
             
             <div class="example">
                 <h5>Strategic Example:</h5>
-                <p>If you're planning to increase media impressions by 20% for a campaign, you can expect approximately a 6.4% increase in travel queries (20% × 0.32 = 6.4%). This helps set realistic expectations for campaign performance and ROI calculations.</p>
+                <p>If you're planning to increase media impressions by 20% for a campaign, you can expect approximately a 7.0% increase in travel queries (20% × 0.35 = 7.0%). This helps set realistic expectations for campaign performance and ROI calculations.</p>
             </div>
         </div>
         
@@ -860,10 +885,114 @@
                 <ul>
                     <li>The strong preference for Corniche/Downtown accommodations suggests that central location and proximity to cultural attractions are primary drivers in accommodation research for French travelers.</li>
                     <li>The dominance of international chains indicates that brand recognition and loyalty programs may play an important role in accommodation selection.</li>
-                    <li>The preference for full-service hotels aligns with the longer average stay duration (11 days) of French travelers, who likely value comprehensive amenities for extended visits.</li>
+                    <li>The preference for full-service hotels aligns with the need for comprehensive amenities even during shorter stays (3.2 days), maximizing the experience in a limited time.</li>
                     <li>The concentration of views in the upscale and luxury segments suggests that French travelers researching Abu Dhabi are primarily from the middle to upper income brackets.</li>
                     <li>The relatively high interest in luxury properties (38%) indicates an opportunity to position Abu Dhabi as a luxury destination to this market.</li>
                     <li>The lower interest in Yas Island properties (14%) compared to other markets suggests that theme park proximity is less important to French travelers than cultural experiences and central location.</li>
+                </ul>
+            </div>
+        </div>
+        
+        <h2>Barriers to Visitation</h2>
+        <div class="section-intro">
+            <p>Understanding why potential visitors choose not to travel to Abu Dhabi is crucial for developing targeted marketing strategies that address specific concerns and misconceptions.</p>
+        </div>
+        
+        <div class="metric-card">
+            <div class="metric-header">
+                <h3 class="metric-title">Top Barriers to Visit</h3>
+                <div class="metric-value">5 key factors</div>
+            </div>
+            <p class="metric-description">The primary reasons French travelers give for not considering Abu Dhabi as a travel destination, based on survey research.</p>
+            
+            <div class="calculation">
+                <h5>How It's Calculated:</h5>
+                <p>Based on survey responses to questions like "What are the main reasons you would not consider traveling to Abu Dhabi?" The percentages represent the proportion of respondents who selected each reason.</p>
+            </div>
+            
+            <div class="interpretation">
+                <h5>Current Barriers (Q4 2024 vs Q1 2021):</h5>
+                <ul>
+                    <li><strong>Preference for Other Destinations</strong>: 47% (+10pp) would rather visit other places</li>
+                    <li><strong>Previous Visitation</strong>: 37% (+19pp) have already visited Abu Dhabi before</li>
+                    <li><strong>Negative Word of Mouth</strong>: 37% (+26pp) heard that other people had very bad experiences there</li>
+                    <li><strong>Perceived Lack of Activities</strong>: 27% (+6pp) feel there is not much to do there</li>
+                    <li><strong>Safety Concerns</strong>: 27% (+22pp) believe it is not a safe place</li>
+                </ul>
+            </div>
+            
+            <div class="business-implications">
+                <h5>Business Implications:</h5>
+                <ul>
+                    <li><strong>Preference for Other Destinations (47%, +10pp)</strong>: This significant increase indicates growing competition from alternative destinations. Marketing should emphasize Abu Dhabi's unique selling points and differentiation from competing destinations.</li>
+                    <li><strong>Previous Visitation (37%, +19pp)</strong>: The substantial increase suggests that many French travelers who have visited Abu Dhabi are not motivated to return. This indicates a need to develop and promote new attractions, experiences, and reasons to revisit.</li>
+                    <li><strong>Negative Word of Mouth (37%, +26pp)</strong>: This alarming increase is the most significant change and requires immediate attention. Marketing should showcase positive visitor testimonials and address specific concerns that may be circulating in the French market.</li>
+                    <li><strong>Perceived Lack of Activities (27%, +6pp)</strong>: This moderate increase suggests a need for better communication about the variety of activities available in Abu Dhabi, particularly those that would appeal to French travelers.</li>
+                    <li><strong>Safety Concerns (27%, +22pp)</strong>: This substantial increase indicates a deteriorating perception of safety that must be addressed. Marketing should emphasize Abu Dhabi's strong safety record and low crime rates.</li>
+                </ul>
+            </div>
+            
+            <div class="example">
+                <h5>Strategic Recommendation:</h5>
+                <p>Based on these barriers, a "Rediscover Abu Dhabi" campaign highlighting new attractions and experiences (addressing the "Previous Visitation" barrier) combined with authentic visitor testimonials from French travelers (addressing the "Negative Word of Mouth" and "Safety Concerns" barriers) would address three of the five top barriers to visitation from the France market.</p>
+            </div>
+        </div>
+        
+        <div class="metric-card">
+            <div class="metric-header">
+                <h3 class="metric-title">Increasing Barriers</h3>
+                <div class="metric-value">5 worsening factors</div>
+            </div>
+            <p class="metric-description">Barriers to visitation that have shown significant deterioration over time, representing challenges that need to be addressed.</p>
+            
+            <div class="interpretation">
+                <h5>Worsening Barriers (Q4 2024 vs Q1 2021):</h5>
+                <ul>
+                    <li><strong>Negative Word of Mouth</strong>: 37% (+26pp) heard that other people had very bad experiences</li>
+                    <li><strong>Lack of Children's Entertainment</strong>: 24% (+23pp) believe there is not much entertainment for children</li>
+                    <li><strong>Safety Concerns</strong>: 27% (+22pp) believe it is not a safe place</li>
+                    <li><strong>Previous Visitation</strong>: 37% (+19pp) have already visited Abu Dhabi before</li>
+                    <li><strong>Perception as Destination for Older People</strong>: 19% (+19pp) believe it is only for older people</li>
+                </ul>
+            </div>
+            
+            <div class="business-implications">
+                <h5>Business Implications:</h5>
+                <ul>
+                    <li>The substantial increase in "Negative Word of Mouth" (+26pp) represents the most critical challenge, indicating a significant deterioration in reputation that requires immediate attention.</li>
+                    <li>The significant increase in "Lack of Children's Entertainment" (+23pp) suggests a growing perception that Abu Dhabi is not family-friendly, despite the presence of numerous family attractions.</li>
+                    <li>The substantial increase in "Safety Concerns" (+22pp) indicates a serious deterioration in safety perception that must be addressed through targeted communications.</li>
+                    <li>The increase in "Previous Visitation" (+19pp) as a barrier suggests that the destination is not providing sufficient new experiences to motivate return visits.</li>
+                    <li>The emergence of "Perception as Destination for Older People" (+19pp) indicates a growing image problem among younger French travelers.</li>
+                    <li>These worsening barriers should be prioritized in marketing communications, with particular focus on addressing negative word of mouth, safety concerns, and family-friendly offerings.</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="metric-card">
+            <div class="metric-header">
+                <h3 class="metric-title">Improving Barriers</h3>
+                <div class="metric-value">Key positive change</div>
+            </div>
+            <p class="metric-description">Barriers to visitation that have shown improvement over time, representing areas of progress.</p>
+            
+            <div class="interpretation">
+                <h5>Improving Barriers (Q4 2024 vs Q1 2021):</h5>
+                <ul>
+                    <li><strong>Restrictive Laws and Customs</strong>: 23% (-19pp) concerned about cultural restrictions</li>
+                    <li><strong>Expense</strong>: 11% (-5pp) believe it is too expensive</li>
+                    <li><strong>Weather</strong>: 3% (-1pp) believe the weather is not good</li>
+                </ul>
+            </div>
+            
+            <div class="business-implications">
+                <h5>Business Implications:</h5>
+                <ul>
+                    <li>The substantial decrease in "Restrictive Laws and Customs" (-19pp) represents a significant positive shift in perception, likely reflecting the impact of recent liberalization of laws and customs in Abu Dhabi.</li>
+                    <li>The moderate decrease in "Expense" (-5pp) suggests some improvement in value perception, though this remains a barrier for 11% of potential visitors.</li>
+                    <li>The slight decrease in "Weather" concerns (-1pp) indicates minimal change in this perception.</li>
+                    <li>Marketing should leverage the positive change in perception regarding laws and customs, highlighting the welcoming and increasingly liberal environment in Abu Dhabi.</li>
+                    <li>These improving barriers demonstrate that perceptions can be changed through targeted communications and policy changes, providing a model for addressing the currently worsening barriers.</li>
                 </ul>
             </div>
         </div>
@@ -875,12 +1004,14 @@
             <ul>
                 <li>Strong awareness (75.00%) but low consideration (22.99%) and intent (13.30%), indicating significant barriers to conversion</li>
                 <li>A moderate intent-to-consideration ratio (0.58) indicating reasonable funnel conversion once consideration is achieved</li>
-                <li>A relatively long average stay (11 days) indicating extended vacation patterns</li>
+                <li>A relatively short average stay (3.2 days) indicating short-break vacation patterns</li>
                 <li>A long booking window (61 days) allowing for effective campaign planning</li>
-                <li>Bi-modal seasonality with peaks in February and October</li>
-                <li>Moderate media elasticity (0.32) suggesting reasonable but not strong response to media investments</li>
+                <li>Bi-modal seasonality with peaks in February (projected to reach 58.11 in 2025) and October</li>
+                <li>Moderate media elasticity (0.35) suggesting reasonable but not strong response to media investments</li>
                 <li>Strong interest in cultural attractions, with Sheikh Zayed Grand Mosque and Saadiyat Beach being the most searched attractions</li>
                 <li>Preference for centrally located accommodations near cultural attractions rather than theme park-adjacent properties</li>
+                <li>Significant barriers including preference for other destinations (47%), previous visitation (37%), and negative word of mouth (37%)</li>
+                <li>Concerning growth in negative word of mouth (+26pp), lack of children's entertainment (+23pp), and safety concerns (+22pp)</li>
             </ul>
             
             <hr style="border: 1px solid var(--primary-light); margin: 20px 0;">
@@ -888,24 +1019,27 @@
             <p>These insights suggest a strategic focus on:</p>
             <ul>
                 <li>Addressing the significant gap between awareness and consideration through targeted messaging that addresses specific barriers</li>
+                <li>Countering negative word of mouth through positive testimonials and addressing specific concerns circulating in the French market</li>
+                <li>Highlighting family-friendly attractions and activities to address the perception of limited children's entertainment</li>
+                <li>Emphasizing Abu Dhabi's safety record and security measures to address growing safety concerns</li>
                 <li>Highlighting the cultural connection between France and Abu Dhabi through the Louvre Abu Dhabi</li>
-                <li>Developing comprehensive itineraries that span the typical 11-day stay, focusing on cultural experiences and beach relaxation</li>
-                <li>Timing campaigns to align with the 61-day booking window, particularly for the February and October peak periods</li>
+                <li>Developing compact itineraries that maximize the typical 3.2-day stay, focusing on high-impact cultural experiences and beach relaxation</li>
+                <li>Timing campaigns to align with the 61-day booking window, particularly for the February peak period which shows a dramatic 106% increase in the 2025 forecast compared to February 2024</li>
                 <li>Creating marketing content that showcases the blend of cultural attractions, beaches, and urban experiences available in Abu Dhabi</li>
                 <li>Developing partnerships with centrally located hotels that offer easy access to cultural attractions</li>
                 <li>Positioning Abu Dhabi as a luxury cultural destination with unique architectural and natural attractions</li>
-                <li>Emphasizing the diversity of experiences available to maintain engagement over the longer average stay duration</li>
+                <li>Emphasizing the diversity of experiences available to maximize engagement during the short 3.2-day average stay duration</li>
             </ul>
             
             <hr style="border: 1px solid var(--primary-light); margin: 20px 0;">
             
-            <p>With these insights and ongoing monitoring of these metrics, DCT - Abu Dhabi can formulate more effective marketing strategies and increase our return on marketing investment in the France market.</p>
+            <p>With these insights and ongoing monitoring of these metrics, DCT - Abu Dhabi can formulate more effective marketing strategies and increase our return on marketing investment in the France market. The significant increase in planned media impressions for 2025 (995.8M, +49.26% YoY) should drive substantial growth in travel queries, particularly for the February peak period.</p>
         </div>
     </div>
     
     <div class="footer">
         <div class="container">
-            <p>Copyright © 2025 Department of Culture and Tourism - Abu Dhabi | Research & Insights Unit</p>
+            <p>© 2025 Research & Insights Unit | Strategic Marketing & Communications | Department of Culture and Tourism – Abu Dhabi</p>
         </div>
     </div>
 </body>
